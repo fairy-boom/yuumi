@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <parent>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-parent</artifactId>
+        <version>2.1.13.RELEASE</version>
+        <relativePath/>
+    </parent>
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>org.okboom.platform</groupId>
+    <artifactId>yuumi-dependencies</artifactId>
+    <packaging>pom</packaging>
+    <version>${yunmi.tool.version}</version>
+    <description>版本控制</description>
+
+    <properties>
+        <yunmi.tool.version>0.0.1-SNAPSHOT</yunmi.tool.version>
+        <redisson.version>3.12.5</redisson.version>
+        <protostuff.version>1.7.2</protostuff.version>
+        <hutool.version>5.3.3</hutool.version>
+    </properties>
+
+    <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <groupId>org.okboom</groupId>
+                <artifactId>yuumi-core-tool</artifactId>
+                <version>${yunmi.tool.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.okboom</groupId>
+                <artifactId>yuumi-redis-starter</artifactId>
+                <version>${yunmi.tool.version}</version>
+            </dependency>
+
+            <!-- redis -->
+            <dependency>
+                <groupId>org.redisson</groupId>
+                <artifactId>redisson-spring-boot-starter</artifactId>
+                <version>${redisson.version}</version>
+            </dependency>
+
+            <!-- serializer -->
+            <dependency>
+                <groupId>io.protostuff</groupId>
+                <artifactId>protostuff-core</artifactId>
+                <version>${protostuff.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>io.protostuff</groupId>
+                <artifactId>protostuff-runtime</artifactId>
+                <version>${protostuff.version}</version>
+            </dependency>
+
+            <!-- tool -->
+            <dependency>
+                <groupId>cn.hutool</groupId>
+                <artifactId>hutool-all</artifactId>
+                <version>${hutool.version}</version>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
+</project>
