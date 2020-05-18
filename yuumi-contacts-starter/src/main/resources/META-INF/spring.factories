@@ -1,0 +1,2 @@
+org.springframework.boot.autoconfigure.EnableAutoConfiguration=\
+org.okboom.yuumi.contacts.configuration.ContactsConfiguration

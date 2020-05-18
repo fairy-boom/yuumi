@@ -20,10 +20,10 @@
         <url>https://www.okboom.org</url>
     </organization>
     <modules>
-        <module>yuumi-org-starter</module>
         <module>yuumi-redis-starter</module>
         <module>yuumi-dependencies</module>
         <module>yuumi-core-tool</module>
+        <module>yuumi-contacts-starter</module>
     </modules>
     <description>企业应用组件</description>
 
