@@ -25,6 +25,7 @@
         <module>yuumi-core-tool</module>
         <module>yuumi-contacts-starter</module>
         <module>yuumi-sequence-starter</module>
+        <module>yuumi-boot-starter</module>
     </modules>
     <description>企业应用组件</description>
 
