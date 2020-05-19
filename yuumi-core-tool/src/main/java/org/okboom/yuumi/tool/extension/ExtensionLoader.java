@@ -1,6 +1,6 @@
 package org.okboom.yuumi.tool.extension;
 
-import org.okboom.yuumi.tool.extension.annotation.YuumiSPI;
+import org.okboom.yuumi.tool.extension.annotation.Extension;
 import org.okboom.yuumi.tool.extension.exception.ExtensionException;
 
 import java.util.Objects;
@@ -20,7 +20,7 @@ public class ExtensionLoader<T> {
     }
 
     private static <T> boolean withExtensionAnnotation(final Class<T> type) {
-        return type.isAnnotationPresent(YuumiSPI.class);
+        return type.isAnnotationPresent(Extension.class);
     }
 
     public static <T> ExtensionLoader<T> getExtensionLoader(final Class<T> type) {
@@ -40,7 +40,7 @@ public class ExtensionLoader<T> {
         ServiceLoader<T> loader = ServiceLoader.load(type);
         return StreamSupport.stream(loader.spliterator(), false)
                 .filter(e -> Objects.equals(e.getClass()
-                        .getAnnotation(YuumiSPI.class).value(), value))
+                        .getAnnotation(Extension.class).value(), value))
                 .findFirst().orElseThrow(() -> new ExtensionException("Please check your configuration"));
     }
 }
