@@ -27,6 +27,7 @@
         <module>yuumi-sequence-starter</module>
         <module>yuumi-boot-starter</module>
         <module>yuumi-cloud-starter</module>
+        <module>yuumi-mybatis-starter</module>
     </modules>
     <description>企业应用组件</description>
 
