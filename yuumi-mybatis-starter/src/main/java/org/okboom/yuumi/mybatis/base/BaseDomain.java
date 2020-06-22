@@ -22,13 +22,13 @@ public class BaseDomain implements Serializable {
     @TableId(value = "id", type = IdType.ASSIGN_ID)
     private Long id;
     /**
-     * 创建人
-     */
-    private Long createUser;
-    /**
      * 创建时间
      */
-    private LocalDateTime createTime;
+    private LocalDateTime createdTime;
+    /**
+     * 更新时间
+     */
+    private LocalDateTime modifyTime;
     /**
      * 状态[0:未删除,1:删除]
      */
