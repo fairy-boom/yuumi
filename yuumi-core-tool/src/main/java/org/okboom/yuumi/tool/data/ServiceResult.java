@@ -12,7 +12,7 @@ import java.io.Serializable;
 @Data
 @ToString
 @NoArgsConstructor
-public class Result<T> implements Serializable {
+public class ServiceResult<T> implements Serializable {
     private static final long serialVersionUID = 868401298415052677L;
 
     /**
@@ -38,7 +38,7 @@ public class Result<T> implements Serializable {
      * @param serviceCode
      * @param msg
      */
-    public Result(CommonCode serviceCode, String msg) {
+    public ServiceResult(CommonCode serviceCode, String msg) {
         this(serviceCode, null, msg);
     }
 
@@ -47,7 +47,7 @@ public class Result<T> implements Serializable {
      * @param serviceCode
      * @param data
      */
-    private Result(CommonCode serviceCode, T data) {
+    private ServiceResult(CommonCode serviceCode, T data) {
         this(serviceCode, data, serviceCode.getMessage());
     }
 
@@ -57,7 +57,7 @@ public class Result<T> implements Serializable {
      * @param data
      * @param msg
      */
-    private Result(CommonCode serviceCode, T data, String msg) {
+    private ServiceResult(CommonCode serviceCode, T data, String msg) {
         this(serviceCode.getCode(), data, msg);
     }
 
@@ -67,7 +67,7 @@ public class Result<T> implements Serializable {
      * @param data
      * @param msg
      */
-    private Result(int code, T data, String msg) {
+    private ServiceResult(int code, T data, String msg) {
         this.code = code;
         this.data = data;
         this.message = msg;
@@ -81,8 +81,8 @@ public class Result<T> implements Serializable {
      * @param <T>
      * @return
      */
-    public static <T> Result<T> fail(String msg) {
-        return new Result(CommonCode.ERROR, msg);
+    public static <T> ServiceResult<T> fail(String msg) {
+        return new ServiceResult(CommonCode.ERROR, msg);
     }
 
     /**
@@ -91,8 +91,8 @@ public class Result<T> implements Serializable {
      * @param <T>
      * @return
      */
-    public static <T> Result<T> fail(int code, String msg) {
-        return new Result(code, null, msg);
+    public static <T> ServiceResult<T> fail(int code, String msg) {
+        return new ServiceResult(code, null, msg);
     }
 
     /**
@@ -100,8 +100,8 @@ public class Result<T> implements Serializable {
      * @param <T>
      * @return
      */
-    public static <T> Result<T> success() {
-        return new Result(CommonCode.SUCCESS, CommonCode.SUCCESS.message);
+    public static <T> ServiceResult<T> success() {
+        return new ServiceResult(CommonCode.SUCCESS, CommonCode.SUCCESS.message);
     }
     /**
      * 成功
@@ -109,8 +109,8 @@ public class Result<T> implements Serializable {
      * @param <T>
      * @return
      */
-    public static <T> Result<T> success(String msg) {
-        return new Result(CommonCode.SUCCESS, msg);
+    public static <T> ServiceResult<T> success(String msg) {
+        return new ServiceResult(CommonCode.SUCCESS, msg);
     }
 
 }
