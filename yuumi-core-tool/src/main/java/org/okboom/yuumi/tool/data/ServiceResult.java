@@ -103,6 +103,16 @@ public class ServiceResult<T> implements Serializable {
     public static <T> ServiceResult<T> success() {
         return new ServiceResult(CommonCode.SUCCESS, CommonCode.SUCCESS.message);
     }
+
+    /**
+     * 成功
+     * @param <T> data
+     * @return
+     */
+    public static <T> ServiceResult<T> success(T data) {
+        return new ServiceResult(CommonCode.SUCCESS, data, CommonCode.SUCCESS.message);
+    }
+
     /**
      * 成功
      * @param msg

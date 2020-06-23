@@ -12,7 +12,7 @@ public enum CommonCode implements ResultCode {
     /**
      * 失败
      */
-    ERROR(400, "业务异常");
+    ERROR(500, "业务异常");
 
     final int code;
     final String message;
