@@ -35,5 +35,9 @@
             <artifactId>mybatis-typehandlers-jsr310</artifactId>
             <version>1.0.2</version>
         </dependency>
+        <dependency>
+            <groupId>org.okboom</groupId>
+            <artifactId>yuumi-core-tool</artifactId>
+        </dependency>
     </dependencies>
 </project>
