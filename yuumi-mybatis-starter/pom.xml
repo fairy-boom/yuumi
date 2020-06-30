@@ -39,5 +39,11 @@
             <groupId>org.okboom</groupId>
             <artifactId>yuumi-core-tool</artifactId>
         </dependency>
+
+        <!-- MySql -->
+        <dependency>
+            <groupId>mysql</groupId>
+            <artifactId>mysql-connector-java</artifactId>
+        </dependency>
     </dependencies>
 </project>
