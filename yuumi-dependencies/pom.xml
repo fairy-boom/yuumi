@@ -13,11 +13,11 @@
     <groupId>org.okboom.platform</groupId>
     <artifactId>yuumi-dependencies</artifactId>
     <packaging>pom</packaging>
-    <version>${yunmi.tool.version}</version>
+    <version>${yunmi.version}</version>
     <description>版本控制</description>
 
     <properties>
-        <yunmi.tool.version>0.0.1-SNAPSHOT</yunmi.tool.version>
+        <yunmi.version>0.0.1-SNAPSHOT</yunmi.version>
         <redisson.version>3.12.5</redisson.version>
         <protostuff.version>1.7.2</protostuff.version>
         <hutool.version>5.3.3</hutool.version>
@@ -32,13 +32,38 @@
         <dependencies>
             <dependency>
                 <groupId>org.okboom</groupId>
+                <artifactId>yuumi-boot-starter</artifactId>
+                <version>${yunmi.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.okboom</groupId>
+                <artifactId>yuumi-cloud-starter</artifactId>
+                <version>${yunmi.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.okboom</groupId>
+                <artifactId>yuumi-contacts-starter</artifactId>
+                <version>${yunmi.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.okboom</groupId>
                 <artifactId>yuumi-core-tool</artifactId>
-                <version>${yunmi.tool.version}</version>
+                <version>${yunmi.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.okboom</groupId>
+                <artifactId>yuumi-mybatis-starter</artifactId>
+                <version>${yunmi.version}</version>
             </dependency>
             <dependency>
                 <groupId>org.okboom</groupId>
                 <artifactId>yuumi-redis-starter</artifactId>
-                <version>${yunmi.tool.version}</version>
+                <version>${yunmi.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.okboom</groupId>
+                <artifactId>yuumi-sequence-starter</artifactId>
+                <version>${yunmi.version}</version>
             </dependency>
 
             <!-- redis -->
