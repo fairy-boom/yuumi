@@ -1,9 +1,6 @@
 package org.okboom.yuumi.tool.convert;
 
-import org.mapstruct.InheritConfiguration;
-import org.mapstruct.InheritInverseConfiguration;
 import org.mapstruct.MapperConfig;
-import org.mapstruct.Mappings;
 
 import java.util.List;
 
@@ -19,7 +16,6 @@ public interface BaseConvert<S,T> {
      * @param s 转换源
      * @return 转换目标
      */
-    @Mappings({})
     T convertToTarget(S s);
 
     /**
@@ -27,7 +23,6 @@ public interface BaseConvert<S,T> {
      * @param t 转换源
      * @return
      */
-    @InheritInverseConfiguration(name = "sourceToTarget")
     S convertToSource(T t);
 
     /**
@@ -35,7 +30,6 @@ public interface BaseConvert<S,T> {
      * @param s
      * @return
      */
-    @InheritConfiguration(name = "sourceToTarget")
     List<T> convertTo(List<S> s);
 
     /**
@@ -43,6 +37,5 @@ public interface BaseConvert<S,T> {
      * @param t
      * @return
      */
-    @InheritConfiguration(name = "targetToSource")
     List<S> targetToSource(List<T> t);
 }
