@@ -6,10 +6,8 @@ import org.okboom.yuumi.contacts.cache.OrgCache;
 import org.okboom.yuumi.contacts.cache.RedisOrgCache;
 import org.okboom.yuumi.contacts.constant.OrgSource;
 import org.okboom.yuumi.contacts.service.OrgDepartmentService;
-import org.okboom.yuumi.contacts.service.OrgRoleService;
 import org.okboom.yuumi.contacts.service.OrgUserService;
 import org.okboom.yuumi.contacts.service.dingtalk.DingtalkDepartServiceImpl;
-import org.okboom.yuumi.contacts.service.dingtalk.DingtalkRoleServiceImpl;
 import org.okboom.yuumi.contacts.service.dingtalk.DingtalkUserServiceImpl;
 import org.springframework.boot.context.properties.EnableConfigurationProperties;
 import org.springframework.context.annotation.Bean;
@@ -25,9 +23,8 @@ public class ContactsConfiguration {
 
     @Bean
     public OrgTemplate orgTemplate(OrgDepartmentService orgDepartmentService,
-                                   OrgUserService orgUserService,
-                                   OrgRoleService orgRoleService) {
-        return new OrgTemplate(orgDepartmentService, orgUserService, orgRoleService);
+                                   OrgUserService orgUserService) {
+        return new OrgTemplate(orgDepartmentService, orgUserService);
     }
 
     @Bean
@@ -52,14 +49,6 @@ public class ContactsConfiguration {
     public OrgUserService orgUserService(OrgCache orgCache, ContactsProperties contactsProperties) {
         if(contactsProperties.getSource().equals(OrgSource.DINGTALK)) {
             return new DingtalkUserServiceImpl(orgCache);
-        }
-        return null;
-    }
-
-    @Bean
-    public OrgRoleService orgRoleService(ContactsProperties contactsProperties) {
-        if(contactsProperties.getSource().equals(OrgSource.DINGTALK)) {
-            return new DingtalkRoleServiceImpl();
         }
         return null;
     }
