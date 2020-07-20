@@ -28,6 +28,7 @@
         <module>yuumi-boot-starter</module>
         <module>yuumi-cloud-starter</module>
         <module>yuumi-mybatis-starter</module>
+        <module>yunmi-log-starter</module>
     </modules>
     <description>企业应用组件</description>
 
